@@ -3,6 +3,12 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.botoes-principais{
+  background-color: #F5B1BE;
+  font-size: 30px;
+  width: 200px;
+}
+
 a {
   color: #00B7FF;
 }
