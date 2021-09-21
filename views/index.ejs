@@ -8,12 +8,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/normalize.css">
 
     <title>Manas</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Manas</a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a id="nav-icon" class="navbar-brand" href="#">Manas</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,9 +38,6 @@
                 <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -47,24 +45,27 @@
           </form>
         </div>
       </nav>
+      <header id="superior">
+          <div class="container-fluid">
+            <div class="row mt-5 pt-5">
+                <div class="col-6">
+                    <img src="images/icon-1.svg" class="img-fluid">
+                </div>
+                <div class="col-md-6 text-center">
+                  <button type="button" class="btn botoes-principais flex-item">Login</button>
+                  <button type="button" class="btn botoes-principais flex-item">Cadastre-se</button>      
+                </div>
+            </div>
+          </div>
+      </header>
 
-      <div class="container-fluid">
-        <div class="row mt-5 pt-5">
-            <div class="col-6">
-                <img src="images/icon-1.svg" alt="" srcset="">
-            </div>
-            <div class="col-6">
-                <button type="button" class="btn botoes-principais">Login</button>
-                <button type="button" class="btn botoes-principais">Cadastre-se</button>      
-            </div>
-        </div>
-        <div class="row mt-5 pt-5">
-            <div class="col-12">
-                Delas para Elas.
-                Serviços de mulheres para mulheres.
-            </div>
-        </div>
-      </div>
+      <section id="sobre">
+        <h2>Sobre as Manas</h2>
+        <p>
+            Delas para Elas.
+            Serviços de mulheres para mulheres.
+        </p>
+      </section>
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->

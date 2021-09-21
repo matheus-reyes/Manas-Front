@@ -1,14 +1,83 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 .botoes-principais{
   background-color: #F5B1BE;
-  font-size: 30px;
+  color: white;
   width: 200px;
+  margin-top: 20%;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  padding: 20px;
 }
 
 a {
   color: #00B7FF;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  background-color: #F5B1BE;
+}
+
+nav > a {
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+  font-size: 20px;
+  /* font-family: ; */
+}
+
+nav ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+nav ul li {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  width: 15%;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 10px 0;
+  width: 100%;
+  text-decoration: none;
+/* color: ; */
+}
+
+#sobre{
+  background-color: #C59CD6;
+}
+
+#nav-icon{
+  font-size: 30px;
+  width: 200px;
 }
