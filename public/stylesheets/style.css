@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Quicksand:wght@300&display=swap');
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -38,6 +41,12 @@ nav {
   background-color: #F5B1BE;
 }
 
+#nav-icon {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 50px;
+  width: 200px;
+}
+
 nav > a {
   text-decoration: none;
   color: white;
@@ -70,14 +79,9 @@ nav ul li a {
   padding: 10px 0;
   width: 100%;
   text-decoration: none;
-/* color: ; */
 }
 
 #sobre{
-  background-color: #C59CD6;
-}
-
-#nav-icon{
-  font-size: 30px;
-  width: 200px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 50px;
 }
