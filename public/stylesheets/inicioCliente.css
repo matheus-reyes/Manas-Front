@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Quicksand:wght@300&display=swap');
+
+#female-avatar{
+    width:75px;
+}
+
+.navbar{
+    background-color: #F5B1BE;
+}
+
+#nav-icon {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 50px;
+    width: 200px;
+}
+
+a:link{
+    color:black;
+}
+
+a:visited{
+    color:black;
+}
+
+a{
+    color:black;
+}
+
+.icones-servicos{
+    color:#F5B1BE;
+}
+
+.botao-servicos{
+    background-color:#D8DDE0;
+    border:0;
+}
+
+.botao-servicos:hover{
+    background-color:#F5B1BE;
+}
