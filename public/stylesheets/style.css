@@ -17,6 +17,26 @@ body {
   cursor: pointer;
 }
 
+.botao-modal-verde{
+  background-color:#8CDF8B;
+  border:0;
+}
+
+.botao-modal-vermelho{
+  background-color:#DE8273;
+  border:0;
+}
+
+.botao-modal-verde:hover{
+  background-color:rgba(140,223,139, 0.5);
+  border:0;
+}
+
+.botao-modal-vermelho:hover{
+  background-color:rgba(222,130,115, 0.5);
+  border:0;
+}
+
 header {
   display: flex;
   flex-direction: column;
