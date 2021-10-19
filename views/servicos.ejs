@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/servico.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Manas</title>
   </head>
   <body>
@@ -18,23 +19,12 @@
                 <a id="nav-icon" class="navbar-brand" href="#">Manas</a>
             </div>
             <div class="col-3">
-                <div class="input-group rounded">
-                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                    aria-describedby="search-addon" />
-                    <span class="input-group-text border-0" id="search-addon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search d-inline" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                        </svg>
-                    </span>
-                </div>
-            </div>
-            <div class="col-3">
                 <img src="images/female-avatar.svg" id="female-avatar" class="img-fluid">
             </div>
         </div>
 
         <div class="row">
-            <div class="col-6">
+            <div class="col-6" style="margin-top: 10px;">
                 <div class="input-group rounded">
                     <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                     aria-describedby="search-addon" />
@@ -45,7 +35,7 @@
                     </span>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-6" style="margin-top: 10px;">
                 <div class="input-group rounded">
                     <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                     aria-describedby="search-addon" />
@@ -73,7 +63,11 @@
                     <div class="card-body">
                         <p> Beltrano da Silva </p>
                         <p> São Paulo - SP </p>
-                        <p> 5 estrelinhas </p>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
                     </div>
                     <div class="d-flex justify-content-center mb-3">
                         <a href="#" class="btn btn-primary botao-servicos" data-toggle="modal" data-target="#modalDetalhes"> Detalhes </a>
@@ -84,7 +78,8 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modais -->
+    <!-- Modal Detalhes -->
     <div class="modal fade" id="modalDetalhes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
@@ -99,7 +94,32 @@
                 <p> Realizo pinturas internas em estabelecimentos comerciais e residências</p>
                 <p> São Paulo - SP </p>
                 <p> Beltrano da Silva </p>
-                <p> 5 estrelinhas </p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn botao-modal-verde" data-dismiss="modal">Solicitar Orçamento</button>  
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Modal Solicitar Orçamento -->
+    <div class="modal fade" id="modalOrcamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Solicitação de Orçamento</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <!-- abrir o bate papo -->
             </div>
             <div class="modal-footer">
               <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>

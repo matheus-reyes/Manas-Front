@@ -10,6 +10,10 @@ router.get('/inicioCliente', function(req, res, next) {
   res.render('inicioCliente', { title: 'Express' });
 });
 
+router.get('/inicioPrestador', function(req, res, next) {
+  res.render('inicioPrestador', { title: 'Express' });
+});
+
 router.get('/servicos', function(req, res, next) {
   res.render('servicos', { title: 'Express' });
 });

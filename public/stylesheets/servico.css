@@ -67,3 +67,7 @@ p{
     font-weight: bold;
     margin: 0;
 }
+
+.checked {
+    color: #F7B281;
+}

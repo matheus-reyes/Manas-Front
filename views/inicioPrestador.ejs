@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/inicioPrestador.css">
+    <title>Manas</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="row navbar">
+            <div class="col-3">
+                <a id="nav-icon" class="navbar-brand" href="#">Manas</a>
+            </div>
+            <div class="col-3">
+                <div class="input-group rounded">
+                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                    aria-describedby="search-addon" />
+                    <span class="input-group-text border-0" id="search-addon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search d-inline" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="col-3">
+                <img src="images/female-avatar.svg" id="female-avatar" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <div id="viewport">
+        <!-- Sidebar -->
+        <div id="sidebar" style="text-align:center;">
+            <ul class="menu" style="display: inline-block;">
+                <li class="nav"> 
+                    <a class="dropdown-toggle" data-toggle="dropdown" style="text-decoration: none;"> Serviços </a>
+                    <ul class="menu dropdown-menu">
+                        <li style="display:inline;"><a href="#listarServicos" class="dropdown-item">Listar serviços</a></li>
+                        <li style="display:inline;"><a href="#cadastrarServico" class="dropdown-item">Cadastrar novo serviço</a></li>
+                    </ul>
+                </li>
+                <li class="nav">
+                    <a href="#orcamentos">
+                       Orçamentos
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Content -->
+        <div id="content" class="container-fluid">
+            <div id="inicio" class="menu-content">
+                <h1>Bem vinda ao Manas</h1>
+                <p>
+                    É uma honra tê-la por aqui!
+                </p>
+                <p>
+                    Utilize o menu lateral para navegar.
+                </p>
+            </div>
+
+            <div id="listarServicos" class="menu-content">
+                <h1>Bem vinda ao Manas</h1>
+                <p>
+                    yyyyyyyyyyyyy
+                </p>
+                <p>
+                    Utilize o menu lateral para navegar.
+                </p>
+            </div>
+
+            <div id="cadastrarServico" class="menu-content">
+                <h1>Bem vinda ao Manas</h1>
+                <p>
+                    vvvvvvvvvvvvv
+                </p>
+                <p>
+                    Utilize o menu lateral para navegar.
+                </p>
+            </div>
+
+            <div id="orcamentos" class="menu-content">
+                <h1>Bem vinda ao Manas</h1>
+                <p>
+                   aaaaaaaaaaaa
+                </p>
+                <p>
+                    Utilize o menu lateral para navegar.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+
+    <script>
+        var $content = $('.menu-content');
+
+        function showContent(selector) {
+            $content.hide();
+            $(selector).show();
+        }
+
+        $('.menu').on('click', 'li', function(e) {
+            showContent(e.currentTarget.hash);
+            e.preventDefault();
+        }); 
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+</body>
+</html>
