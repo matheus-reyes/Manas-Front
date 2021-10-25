@@ -52,23 +52,23 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <form>
+          <form action="/login" method="post">
+            <div class="modal-body">
               <div class="form-group">
                 <label for="emailLogin">Email</label>
-                <input type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="Insira seu e-mail">
+                <input type="email" class="form-control" id="emailLogin" name="emailLogin" aria-describedby="emailHelp" placeholder="Insira seu e-mail">
                 <small id="emailHelp" class="form-text text-muted">Nós nunca compartilharemos seu e-mail com ninguém.</small>
               </div>
               <div class="form-group">
                 <label for="senhaLogin">Senha</label>
-                <input type="password" class="form-control" id="senhaLogin" placeholder="Insira sua senha">
+                <input type="password" class="form-control" id="senhaLogin" name="senhaLogin" placeholder="Insira sua senha">
               </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
-            <button type="submit" class="btn botao-modal-verde">Entrar</button>
-          </div>
+             </div>
+            <div class="modal-footer">
+              <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
+              <button type="submit" class="btn botao-modal-verde">Entrar</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -82,84 +82,84 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-row">
-                <div class="form-group col-6">
-                  <label for="emailCadastro">Email</label>
-                  <input type="email" class="form-control" id="emailCadastro" placeholder="Email">
-                </div>
-                <div class="form-group col-6">
-                  <label for="senhaCadastro">Senha</label>
-                  <input type="password" class="form-control" id="senhaCadastro" placeholder="Senha">
-                </div>
-              </div>  
-              <div class="form-group col-12 p-0">
-                <label for="nome">Nome Completo</label>
-                <input type="text" class="form-control" id="nome" placeholder="Nome Completo">
-              </div>
-              <div class="form-group col-12 p-0">
-                <label for="cpf">CPF</label>
-                <input type="text" class="form-control" id="cpf" placeholder="XXX.XXX.XXX-XX">
-              </div>
-              <div class="form-row">
-                <div class="form-group col-6">
-                  <label for="dataNascimento">Data de Nascimento</label>
-                  <input type="date" class="form-control" id="dataNascimento" placeholder="DD/MM/AAAA">
-                </div>
-                <div class="form-group col-6">
-                  <label for="telefone">Telefone</label>
-                  <input type="tel" class="form-control" id="telefone" placeholder="(XX) XXXX-XXXX">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-6">
-                  <label for="rua">Logradouro</label>
-                  <input type="text" class="form-control" id="rua" placeholder="Rua dos Professores">
-                </div>
-                <div class="form-group col-6">
-                  <label for="bairro">Bairro</label>
-                  <input type="text" class="form-control" id="bairro" placeholder="Vila Maria">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-6">
-                  <label for="numero">Número</label>
-                  <input type="text" class="form-control" id="numero" placeholder="1234">
-                </div>
-                <div class="form-group col-6">
-                  <label for="cep">CEP</label>
-                  <input type="text" class="form-control" id="cep" placeholder="XXXXX-XXX">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-6">
-                  <label for="cidade">Cidade</label>
-                  <input type="text" class="form-control" id="cidade" placeholder="São Paulo">
-                </div>
-                <div class="form-group col-6">
-                  <label for="estado">Estado</label>
-                  <input type="text" class="form-control" id="estado" placeholder="SP">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-12">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="radio" id="radioCliente" value="cliente">
-                    <label class="form-check-label" for="radioCliente"> Quero consumir serviços </label>
+          <form action="/cadastro" method="post">
+            <div class="modal-body">
+                <div class="form-row">
+                  <div class="form-group col-6">
+                    <label for="emailCadastro">Email</label>
+                    <input type="email" class="form-control" id="emailCadastro" name="emailCadastro" placeholder="Email">
                   </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="radio" id="radioPrestador" value="prestador">
-                    <label class="form-check-label" for="radioPrestador"> Quero prestar serviços </label>
+                  <div class="form-group col-6">
+                    <label for="senhaCadastro">Senha</label>
+                    <input type="password" class="form-control" id="senhaCadastro" name="senhaCadastro" placeholder="Senha">
+                  </div>
+                </div>  
+                <div class="form-group col-12 p-0">
+                  <label for="nome">Nome Completo</label>
+                  <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome Completo">
+                </div>
+                <div class="form-group col-12 p-0">
+                  <label for="cpf">CPF</label>
+                  <input type="text" class="form-control" id="cpf" name="cpf" placeholder="XXX.XXX.XXX-XX">
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-6">
+                    <label for="dataNascimento">Data de Nascimento</label>
+                    <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" placeholder="DD/MM/AAAA">
+                  </div>
+                  <div class="form-group col-6">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(XX) XXXX-XXXX">
                   </div>
                 </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
-            <button type="submit" class="btn botao-modal-verde">Salvar</button>
-          </div>
+                <div class="form-row">
+                  <div class="form-group col-6">
+                    <label for="rua">Logradouro</label>
+                    <input type="text" class="form-control" id="rua" name="logradouro" placeholder="Rua dos Professores">
+                  </div>
+                  <div class="form-group col-6">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Vila Maria">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-6">
+                    <label for="numero">Número</label>
+                    <input type="text" class="form-control" id="numero" name="numero" placeholder="1234">
+                  </div>
+                  <div class="form-group col-6">
+                    <label for="cep">CEP</label>
+                    <input type="text" class="form-control" id="cep" name="cep" placeholder="XXXXX-XXX">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-6">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="São Paulo">
+                  </div>
+                  <div class="form-group col-6">
+                    <label for="estado">Estado</label>
+                    <input type="text" class="form-control" id="estado" name="estado" placeholder="SP">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-12">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="tipo" id="radioCliente" value="cliente">
+                      <label class="form-check-label" for="radioCliente"> Quero consumir serviços </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="tipo" id="radioPrestador" value="prestador">
+                      <label class="form-check-label" for="radioPrestador"> Quero prestar serviços </label>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
+              <button type="submit" class="btn botao-modal-verde">Salvar</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

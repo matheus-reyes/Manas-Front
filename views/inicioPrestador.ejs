@@ -94,32 +94,32 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="form-row">
-                      <div class="form-group col-6">
-                        <label for="nomeServico">Nome do Serviço</label>
-                        <input type="nomeServico" class="form-control" id="nomeServico" placeholder="Nome do Serviço">
+                <form action="/servico" method="post">
+                  <div class="modal-body">
+                      <div class="form-row">
+                        <div class="form-group col-6">
+                          <label for="nomeServico">Nome do Serviço</label>
+                          <input type="nomeServico" class="form-control" name="nomeServico" id="nomeServico" placeholder="Nome do Serviço">
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="categoria">Categoria</label>
+                          <input type="categoria" class="form-control" id="categoria" name="categoria" placeholder="Categoria">
+                        </div>
+                      </div>  
+                      <div class="form-group col-12 p-0">
+                        <label for="nome">Valor médio</label>
+                        <input type="text" class="form-control" id="nome" name="valorMedio" placeholder="Valor médio">
                       </div>
-                      <div class="form-group col-6">
-                        <label for="categoria">Categoria</label>
-                        <input type="categoria" class="form-control" id="categoria" placeholder="Categoria">
+                      <div class="form-group">
+                          <label for="descricao">Descricao</label>
+                          <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
                       </div>
-                    </div>  
-                    <div class="form-group col-12 p-0">
-                      <label for="nome">Valor médio</label>
-                      <input type="text" class="form-control" id="nome" placeholder="Valor médio">
-                    </div>
-                    <div class="form-group">
-                        <label for="descricao">Descricao</label>
-                        <textarea class="form-control" id="descricao" rows="3"></textarea>
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
-                  <button type="submit" class="btn botao-modal-verde">Salvar</button>
-                </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn botao-modal-verde">Salvar</button>
+                  </div>
+               </form>
               </div>
             </div>
           </div>
@@ -163,8 +163,7 @@
           </div>
         </div>
       </div>
-</div>
-
+    </div>
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
