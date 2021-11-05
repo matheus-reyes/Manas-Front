@@ -1,11 +1,11 @@
-const bcrypt = require("bcrypt");
+const axios = require('axios');
 
 module.exports = {
 
     //função para carregar a página de login
-    cadastro: (req, res) => {
+    cadastro: async (req, res) => {
         const email = req.body.emailCadastro;
-        const senha = bcrypt.hashSync(req.body.senhaCadastro, 10);
+        const senha = req.body.senhaCadastro;
         const nome = req.body.nome;
         const cpf = req.body.cpf;
         const dataNascimento = req.body.dataNascimento;
@@ -18,22 +18,34 @@ module.exports = {
         const estado = req.body.estado;
         const tipo = req.body.tipo;
         
-        const uri = "";
-        const body = {
-            'username': email,
-            'password': senha,
-            'name': nome,
-            'cpf': cpf,
-            'telephone': telefone,
-            'birthdate': dataNascimento,
-            'state': estado,
-            'city': cidade,
-            'district': bairro,
-            'street': logradouro,
-            'number': numero,
-            'cep': cep,
-            'type': tipo
-        }
-    }
+        const url = "https://manas-back.herokuapp.com/home/registration";
 
+        const axiosConfig = {
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                "Access-Control-Allow-Origin": "*",
+            }
+        };
+
+        const body = JSON.stringify({
+            email: email,
+            password: senha,
+            name: nome,
+            cpf: cpf,
+            telephone: telefone,
+            birthDate: dataNascimento,
+            state: estado,
+            city: cidade,
+            neighbourhood: bairro,
+            street: logradouro,
+            number: parseInt(numero),
+            cep: cep,
+            userType: tipo
+        });
+
+        const response = await axios.post(url, body, axiosConfig);
+        const feedback = "Cadastro Realizado com Sucesso!";
+
+        res.render("index", {feedback});
+    }
 }

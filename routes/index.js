@@ -3,23 +3,17 @@ var router = express.Router();
 const loginController = require('../controllers/login');
 const cadastroController = require('../controllers/cadastro');
 const clienteController = require('../controllers/cliente');
+const prestadorController = require("../controllers/prestador");
+const auth = require('../middlewares/auth');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', clienteController.index);
 
-router.get('/inicioCliente', function(req, res, next) {
-  res.render('inicioCliente', { title: 'Express' });
-});
+router.get('/inicioCliente', auth, clienteController.inicioCliente);
 
-router.get('/inicioPrestador', function(req, res, next) {
-  res.render('inicioPrestador', { title: 'Express' });
-});
+router.get('/inicioPrestador', auth, prestadorController.inicioPrestador);
 
-router.get('/servicos', function(req, res, next) {
-  res.render('servicos', { title: 'Express' });
-});
+router.get('/servicos', auth, clienteController.servicos);
 
 router.post('/login', loginController.login);
 

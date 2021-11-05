@@ -14,6 +14,19 @@ module.exports = {
             'decription': descricao,
             'value': valorMedio,
         }
+    },
+
+    index: (req, res) => {
+        let feedback="";
+        res.render('index', {feedback});
+    },
+
+    inicioCliente: (req, res) => {
+        res.render('inicioCliente');
+    },
+
+    servicos: (req, res) => {
+        res.render('servicos');
     }
 
 }

@@ -1,15 +1,35 @@
 const bcrypt = require("bcrypt");
+const axios = require('axios');
 
 module.exports = {
 
     //função para carregar a página de login
-    login: (req, res) => {
+    login: async (req, res) => {
         const email = req.body.emailLogin;
-        const senha = bcrypt.hashSync(req.body.senhaLogin, 10);
-        const uri = "";
-        const body = {
-            'username': email,
+        const senha = req.body.senhaLogin;
+
+        const url = "https://manas-back.herokuapp.com/login";
+
+        const axiosConfig = {
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                "Access-Control-Allow-Origin": "*",
+            }
+        };
+
+        const body = JSON.stringify({
+            'email': email,
             'password': senha
+        });
+
+        const response = await axios.post(url, body, axiosConfig);
+        req.session.usuario = response['data'];
+        const usuario = req.session.usuario;
+
+        if(usuario.user.authorities[0].authority == "SERVICE_PROVIDER"){
+            res.render('inicioPrestador', {usuario})
+        }else if(usuario.user.authorities[0].authority == "CUSTOMER"){
+            res.render('inicioCliente', {usuario})
         }
     }
 
