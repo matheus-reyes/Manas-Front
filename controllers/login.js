@@ -27,9 +27,9 @@ module.exports = {
         const usuario = req.session.usuario;
 
         if(usuario.user.authorities[0].authority == "SERVICE_PROVIDER"){
-            res.render('inicioPrestador', {usuario})
+            res.redirect('inicioPrestador');
         }else if(usuario.user.authorities[0].authority == "CUSTOMER"){
-            res.render('inicioCliente', {usuario})
+            res.redirect('inicioCliente');
         }
     }
 

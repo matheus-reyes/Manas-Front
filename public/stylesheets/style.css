@@ -8,9 +8,9 @@ body {
 .botoes-principais{
   background-color: #F5B1BE;
   color: white;
-  width: 200px;
-  margin-top: 20%;
-  font-size: 30px;
+  width: 150px;
+  margin-top: 10%;
+  font-size: 20px;
   text-align: center;
   padding: 10px 20px;
   display: inline-block;
@@ -103,5 +103,9 @@ nav ul li a {
 
 #sobre{
   font-family: 'Dosis', sans-serif;
-  font-size: 50px;
+  font-size: 2rem;
+}
+
+#imagem-principal{
+  width:30rem;
 }

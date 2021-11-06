@@ -19,6 +19,6 @@ router.post('/login', loginController.login);
 
 router.post('/cadastro', cadastroController.cadastro);
 
-router.post('/servico', clienteController.cadastrarServico);
+router.post('/servico', prestadorController.cadastrarServico);
 
 module.exports = router;

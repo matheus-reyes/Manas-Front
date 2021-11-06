@@ -1,20 +1,6 @@
+const axios = require('axios');
+
 module.exports = {
-
-    //função para carregar a página de login
-    cadastrarServico: (req, res) => {
-        const nome = req.body.nomeServico;
-        const categoria = req.body.categoria;
-        const valorMedio = req.body.valorMedio;
-        const descricao = req.body.descricao;
-
-        const uri = "";
-        const body = {
-            'name': nome,
-            'category': categoria,
-            'decription': descricao,
-            'value': valorMedio,
-        }
-    },
 
     index: (req, res) => {
         let feedback="";
@@ -25,8 +11,21 @@ module.exports = {
         res.render('inicioCliente');
     },
 
-    servicos: (req, res) => {
-        res.render('servicos');
-    }
+    servicos: async (req, res) => {
+        const categoria = req.query.categoria;
 
+        const url = "https://manas-back.herokuapp.com/customer/category";
+        const queryParams = "?category="+categoria;
+
+        const axiosConfig = {
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                "Access-Control-Allow-Origin": "*",
+            }
+        };
+
+        const response = await axios.get(url + queryParams, axiosConfig);
+        const servicosPorCategoria = response['data'];
+        res.render('servicos', {servicosPorCategoria});
+    }
 }
