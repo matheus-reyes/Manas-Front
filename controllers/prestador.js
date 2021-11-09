@@ -2,9 +2,22 @@ const axios = require('axios');
 
 module.exports = {
 
-    inicioPrestador: (req, res) => {
+    inicioPrestador: async (req, res) => {
         const feedback = "";
-        res.render('inicioPrestador', {feedback});
+
+        const url = "https://manas-back.herokuapp.com/service-provider?id-service-provider="+req.session.usuario.idPerson;
+
+        const axiosConfig = {
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                "Access-Control-Allow-Origin": "*",
+            }
+        };
+
+        const response = await axios.get(url, axiosConfig);
+        const servicos = response['data']['services'];
+
+        res.render('inicioPrestador', {feedback, servicos});
     },
 
     //função para carregar a página de login

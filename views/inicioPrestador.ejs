@@ -38,52 +38,38 @@
             </div>
         </div>
 
-        <div class="row my-5">
-            <div class="offset-1 col-4">
-                Pintura Externa
+        <% if(servicos.length == 0){ %>
+          <div class="row my-5">
+            <div class="col-3">
+                <p class="body-text-p"> Não há nenhum serviço cadastrado! </p>
             </div>
+          </div>
+        <% } else { %>
+          <% for(servico of servicos) { %>
+            <div class="row my-5 linha-servicos">
+                <div class="offset-1 col-4 my-auto">
+                  <%= servico.serviceName %>
+                </div>
 
-            <div class="col-2">
-                <button type="button" class="btn botoes-principais flex-item" data-toggle="modal" data-target="#modalDetalhes">Detalhes</button>      
+                <div class="col-3 my-auto">
+                    <button type="button" class="btn botoes-principais flex-item" data-toggle="modal" data-target="#modalDetalhes<%=servico.idService%>">Detalhes</button>      
+                </div>
+
+                <div class="col-2 my-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                        <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                    </svg>
+                </div>
+
+                <div class="col-2 my-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                        <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                    </svg>
+                </div>
             </div>
-
-            <div class="col-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                </svg>
-            </div>
-
-            <div class="col-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-                </svg>
-            </div>
-        </div>
-
-        <div class="row my-5">
-            <div class="offset-1 col-4">
-                Pintura Externa
-            </div>
-
-            <div class="col-2">
-                <button type="button" class="btn botoes-principais flex-item" data-toggle="modal" data-target="#modalDetalhes">Detalhes</button>      
-            </div>
-
-            <div class="col-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                </svg>
-            </div>
-
-            <div class="col-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-                    <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-                </svg>
-            </div>
-        </div>
-
+            <% } %>
+          <% } %>
         <!-- Modais -->
         <div class="modal fade" id="modalNovoServico" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -120,7 +106,7 @@
                         <input type="text" class="form-control" id="nome" name="valorMedio" placeholder="Valor médio">
                       </div>
                       <div class="form-group">
-                          <label for="descricao">Descricao</label>
+                          <label for="descricao">Descrição</label>
                           <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
                       </div>
                   </div>
@@ -134,45 +120,47 @@
           </div>
     </div>
 
-    <!-- modal detalhes -->
-    <div class="modal fade" id="modalDetalhes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Novo Servico</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-row">
-                  <div class="form-group col-6">
-                    <label for="nomeServico">Nome do Serviço</label>
-                    saydguiaf
+    <% for(servico of servicos) { %>
+      <!-- modal detalhes -->
+      <div class="modal fade" id="modalDetalhes<%=servico.idService%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-row">
+                    <div class="form-group col-6">
+                      <label for="nomeServico"> <strong> Nome do Serviço </strong> </label>
+                      <p> <%= servico.serviceName %> </p>
+                    </div>
+                    <div class="form-group col-6">
+                      <label for="categoria"> <strong> Categoria </strong></label>
+                      <p> <%= servico.category %> </p>
+                    </div>
+                  </div>  
+                  <div class="form-group col-12 p-0">
+                    <label for="nome"> <strong> Valor médio </strong></label>
+                    <p> <%= servico.price %> </p>
                   </div>
-                  <div class="form-group col-6">
-                    <label for="categoria">Categoria</label>
-                    asdiugiyhf
+                  <div class="form-group">
+                    <label for="descricao"> <strong> Descrição </strong></label>
+                    <p> <%= servico.description %> </p>
                   </div>
-                </div>  
-                <div class="form-group col-12 p-0">
-                  <label for="nome">Valor médio</label>
-                  asjdhnikuajdbf
-                </div>
-                <div class="form-group">
-                    <label for="descricao">Descricao</label>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, quam iste dolorem tenetur magnam corporis enim facilis cupiditate sed id voluptatem modi nesciunt? Odit officiis a accusamus ducimus facilis magni.
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    <% } %>
 
     <!-- Modal Feedback -->
     <div class="modal fade" id="modal-feedback" tabindex="-1" role="dialog" aria-labelledby="modal-feedback" aria-hidden="true">

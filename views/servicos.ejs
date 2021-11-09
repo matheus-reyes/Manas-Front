@@ -50,7 +50,7 @@
 
         <div class="row mt-5">
             <% if(servicosPorCategoria.length == 0){ %>
-                <div class="col-3">
+                <div class="col-12 text-center">
                     <p class="body-text-p">Não há nenhum serviço com essa categoria disponível! </p>
                 </div>
             <% } else { %>
@@ -67,7 +67,7 @@
                             </div>
                             <div class="card-body">
                                 <p> <%= servicoPorCategoria.personName %> </p>
-                                <p> São Paulo - SP </p>
+                                <p> <%= servicoPorCategoria.city %> - <%= servicoPorCategoria.state %> </p>
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
@@ -88,7 +88,7 @@
         <!-- Modais -->
         <!-- Modal Detalhes -->
         <div class="modal fade" id="modalDetalhes<%=servicoPorCategoria.idServiceProviderHasService%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Detalhes</h5>
@@ -96,17 +96,36 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
-                <div class="modal-body">
-                    <h2><%=servicoPorCategoria.serviceName%></h2>
-                    <p> Realizo pinturas internas em estabelecimentos comerciais e residências</p>
-                    <p> São Paulo - SP </p>
-                    <p> <%=servicoPorCategoria.price%> </p>
-                    <p> <%=servicoPorCategoria.personName%> </p>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
+                <div class="modal-body">                    
+                    <form>
+                        <div class="form-row">
+                          <div class="form-group col-6">
+                            <label for="nomeServico"> <strong> Serviço </strong> </label>
+                            <p> <%=servicoPorCategoria.serviceName%> </p>
+                            <p> <%=servicoPorCategoria.personName%> </p>
+                            <p> <%= servicoPorCategoria.city %> - <%= servicoPorCategoria.state %> </p>
+                          </div>
+                          <div class="form-group col-6">
+                            <label for="categoria"> <strong> Categoria </strong></label>
+                            <p> <%= servico.category %> </p>
+                          </div>
+                        </div>  
+                        <div class="form-group col-12 p-0">
+                          <label for="nome"> <strong> Valor médio </strong></label>
+                          <p> <%=servicoPorCategoria.price%> </p>
+                        </div>
+                        <div class="form-group">
+                          <label for="descricao"> <strong> Descrição </strong></label>
+                          <p> <%=servicoPorCategoria.description%> </p>
+                        </div>
+                        <div class="form-group">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
