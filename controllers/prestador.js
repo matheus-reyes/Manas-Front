@@ -47,7 +47,12 @@ module.exports = {
         const response = await axios.post(url, body, axiosConfig);
         const feedback = "Serviço Cadastrado com Sucesso!";
 
-        res.render("index", {feedback});
+        const urlServicos = "https://manas-back.herokuapp.com/service-provider?id-service-provider="+req.session.usuario.idPerson;
+
+        const responseServicos = await axios.get(urlServicos, axiosConfig);
+        const servicos = responseServicos['data']['services'];
+
+        res.render("inicioPrestador", {feedback, servicos});
     },
 
 }
