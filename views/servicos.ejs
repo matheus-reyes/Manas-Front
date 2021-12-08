@@ -97,7 +97,7 @@
                 </button>
                 </div>
                 <div class="modal-body">                    
-                    <form>
+                    <form class="ml-5">
                         <div class="form-row">
                           <div class="form-group col-6">
                             <label for="nomeServico"> <strong> Serviço </strong> </label>
@@ -106,8 +106,8 @@
                             <p> <%= servicoPorCategoria.city %> - <%= servicoPorCategoria.state %> </p>
                           </div>
                           <div class="form-group col-6">
-                            <label for="categoria"> <strong> Categoria </strong></label>
-                            <p> <%= servico.category %> </p>
+                            <label for="categoria"> <strong> Contato </strong></label>
+                            <p> <%= servicoPorCategoria.telephone %> </p>
                           </div>
                         </div>  
                         <div class="form-group col-12 p-0">
@@ -128,34 +128,12 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn botao-modal-verde" data-dismiss="modal">Solicitar Orçamento</button>  
+                    <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
             </div>
         </div>
     <% } %>
-
-    <!-- Modal Solicitar Orçamento -->
-    <div class="modal fade" id="modalOrcamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Solicitação de Orçamento</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <!-- abrir o bate papo -->
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
-              <button type="button" class="btn botao-modal-verde" data-dismiss="modal">Solicitar Orçamento</button>  
-            </div>
-          </div>
-        </div>
-    </div>
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
