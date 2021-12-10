@@ -68,11 +68,6 @@
                             <div class="card-body">
                                 <p> <%= servicoPorCategoria.personName %> </p>
                                 <p> <%= servicoPorCategoria.city %> - <%= servicoPorCategoria.state %> </p>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
                             </div>
                             <div class="d-flex justify-content-center mb-3">
                                 <a href="#" class="btn btn-primary botao-servicos" data-toggle="modal" data-target="#modalDetalhes<%=servicoPorCategoria.idServiceProviderHasService%>"> Detalhes </a>
@@ -118,13 +113,48 @@
                           <label for="descricao"> <strong> Descrição </strong></label>
                           <p> <%=servicoPorCategoria.description%> </p>
                         </div>
-                        <div class="form-group">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn botao-modal-verde" data-toggle="modal" data-target="#modalAvaliacoes<%=servicoPorCategoria.idServiceProviderHasService%>"> Ver Avaliações</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalAvaliacoes<%=servicoPorCategoria.idServiceProviderHasService%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Avaliações</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <% if(servicoPorCategoria.evaluations.length == 0) { %>
+                        <div class="col-6">
+                            <p> Ainda não há avaliações nesse serviço! </p>
                         </div>
+                    <% } %>
+                    <form class="ml-5">
+                        <% for(avaliacao of servicoPorCategoria.evaluations) { %>
+                            <div class="form-row mb-3">
+                                <div class="form-group col-6">
+                                  <label for="nomeServico"> <strong> Comentário </strong> </label>
+                                  <p> <%=avaliacao.comment%> </p>
+                                </div>
+                                <div class="form-group col-6">
+                                  <label for="categoria"> <strong> Nota </strong></label>
+                                  <p>
+                                  <% for(let i = 1; i <= avaliacao.grade; i++) { %>
+                                    <span class="fa fa-star checked"></span>
+                                  <% } %>
+                                  </p>
+                                </div>
+                            </div>  
+                        <% } %>
                     </form>
                 </div>
                 <div class="modal-footer">
