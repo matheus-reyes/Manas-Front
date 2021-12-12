@@ -15,8 +15,10 @@ module.exports = {
         const categoria = req.query.categoria;
 
         const url = "https://manas-back.herokuapp.com/customer/category";
-        const queryParams = "?category="+categoria;
-
+        let queryParams = "?category="+categoria;
+        if(req.query.orderedBy){
+            queryParams += "&orderedBy=EVALUATION"
+        }
         const axiosConfig = {
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8',
