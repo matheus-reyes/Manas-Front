@@ -29,5 +29,19 @@ module.exports = {
         const response = await axios.get(url + queryParams, axiosConfig);
         const servicosPorCategoria = response['data'];
         res.render('servicos', {servicosPorCategoria});
+    },
+
+    servicosContratados: async (req, res) => {
+        const url = "https://manas-back.herokuapp.com/customer/category";
+        let queryParams = "?category=CONSERTOS_GERAIS";
+        const axiosConfig = {
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                "Access-Control-Allow-Origin": "*",
+            }
+        };
+        const response = await axios.get(url + queryParams, axiosConfig);
+        const servicos = response['data'];
+        res.render('servicosContratados', {servicos});
     }
 }

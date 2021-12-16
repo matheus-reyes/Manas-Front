@@ -26,29 +26,13 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-3 ml-1 mt-4">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" onclick="noOrder()"> Sem Ordenação </a>
-                        <a class="dropdown-item" onclick="evaluationOrdered()"> Ordenar por Avaliação </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="row mt-5">
-            <% if(servicosPorCategoria.length == 0){ %>
+            <% if(servicos.length == 0){ %>
                 <div class="col-12 text-center">
                     <p class="body-text-p">Não há nenhum serviço com essa categoria disponível! </p>
                 </div>
             <% } else { %>
-                <% for(servicoPorCategoria of servicosPorCategoria) { %>
+                <% for(servico of servicos) { %>
                     <div class="col-3">
                         <div class="card" style="width: 15rem;">
                             <div class="card-img-top d-flex justify-content-center mt-4">
@@ -57,14 +41,14 @@
                                 </svg>
                             </div>
                             <div class="card-body d-flex justify-content-center pb-0">
-                                <h5 class="card-title"> <%= servicoPorCategoria.serviceName %> </h5>
+                                <h5 class="card-title"> <%= servico.serviceName %> </h5>
                             </div>
                             <div class="card-body">
-                                <p> <%= servicoPorCategoria.personName %> </p>
-                                <p> <%= servicoPorCategoria.city %> - <%= servicoPorCategoria.state %> </p>
+                                <p> <%= servico.personName %> </p>
+                                <p> <%= servico.city %> - <%= servico.state %> </p>
                             </div>
                             <div class="d-flex justify-content-center mb-3">
-                                <a href="#" class="btn btn-primary botao-servicos" data-toggle="modal" data-target="#modalDetalhes<%=servicoPorCategoria.idServiceProviderHasService%>"> Detalhes </a>
+                                <a href="#" class="btn btn-primary botao-servicos" data-toggle="modal" data-target="#modalDetalhes<%=servico.idServiceProviderHasService%>"> Detalhes </a>
                             </div>
                         </div>
                     </div>
@@ -73,10 +57,10 @@
         </div>
     </div>
 
-    <% for(servicoPorCategoria of servicosPorCategoria) { %>
+    <% for(servico of servicos) { %>
         <!-- Modais -->
         <!-- Modal Detalhes -->
-        <div class="modal fade" id="modalDetalhes<%=servicoPorCategoria.idServiceProviderHasService%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalDetalhes<%=servico.idServiceProviderHasService%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -90,69 +74,63 @@
                         <div class="form-row">
                           <div class="form-group col-6">
                             <label for="nomeServico"> <strong> Serviço </strong> </label>
-                            <p> <%=servicoPorCategoria.serviceName%> </p>
-                            <p> <%=servicoPorCategoria.personName%> </p>
-                            <p> <%= servicoPorCategoria.city %> - <%= servicoPorCategoria.state %> </p>
+                            <p> <%=servico.serviceName%> </p>
+                            <p> <%=servico.personName%> </p>
+                            <p> <%= servico.city %> - <%= servico.state %> </p>
                           </div>
                           <div class="form-group col-6">
                             <label for="categoria"> <strong> Contato </strong></label>
-                            <p> <%= servicoPorCategoria.telephone %> </p>
+                            <p> <%= servico.telephone %> </p>
                           </div>
                         </div>  
                         <div class="form-group col-12 p-0">
                           <label for="nome"> <strong> Valor médio </strong></label>
-                          <p> <%=servicoPorCategoria.price%> </p>
+                          <p> <%=servico.price%> </p>
                         </div>
                         <div class="form-group">
                           <label for="descricao"> <strong> Descrição </strong></label>
-                          <p> <%=servicoPorCategoria.description%> </p>
+                          <p> <%=servico.description%> </p>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn botao-modal-verde" data-toggle="modal" data-target="#modalAvaliacoes<%=servicoPorCategoria.idServiceProviderHasService%>"> Ver Avaliações</button>
+                    <button type="submit" class="btn botao-modal-verde" data-toggle="modal" data-target="#modalAvaliacoes<%=servico.idServiceProviderHasService%>"> Fazer Avaliação </button>
                 </div>
             </div>
             </div>
         </div>
 
-        <div class="modal fade" id="modalAvaliacoes<%=servicoPorCategoria.idServiceProviderHasService%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalAvaliacoes<%=servico.idServiceProviderHasService%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Avaliações</h5>
+                <h5 class="modal-title" id="exampleModalLabel"> Fazer Avaliação </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                    <% if(servicoPorCategoria.evaluations.length == 0) { %>
-                        <div class="col-6">
-                            <p> Ainda não há avaliações nesse serviço! </p>
-                        </div>
-                    <% } %>
                     <form class="ml-5">
-                        <% for(avaliacao of servicoPorCategoria.evaluations) { %>
-                            <div class="form-row mb-3">
-                                <div class="form-group col-6">
-                                  <label for="nomeServico"> <strong> Comentário </strong> </label>
-                                  <p> <%=avaliacao.comment%> </p>
-                                </div>
-                                <div class="form-group col-6">
-                                  <label for="categoria"> <strong> Nota </strong></label>
-                                  <p>
-                                  <% for(let i = 1; i <= avaliacao.grade; i++) { %>
-                                    <span class="fa fa-star checked"></span>
-                                  <% } %>
-                                  </p>
-                                </div>
-                            </div>  
-                        <% } %>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1"> Nota </label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1"> Comentário </label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn botao-modal-verde"> <a href="/servicosContratados"> Postar Avaliação </a></button>
                 </div>
             </div>
             </div>
