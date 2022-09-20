@@ -17,16 +17,27 @@ const validateEmailRegex = (email) => {
 };
 
 const validateEmail = () => {
-    const $result = $('#resultadoEmailCadastro');
     const email = $('#emailCadastro').val();
-    $result.text('');
 
     if (validateEmailRegex(email)) {
-        $result.text(email + ' is valid :)');
-        $result.css('color', 'green');
+        $('#emailCadastro').addClass("is-valid");
+        $('#emailCadastro').removeClass("is-invalid")
     } else {
-        $result.text(email + ' is not valid :(');
-        $result.css('color', 'red');
+        $('#emailCadastro').addClass("is-invalid");
+        $('#emailCadastro').removeClass("is-valid")
+    }
+    return false;
+}
+
+const validateEmailLogin = () => {
+    const email = $('#emailLogin').val();
+
+    if (validateEmailRegex(email)) {
+        $('#emailLogin').addClass("is-valid");
+        $('#emailLogin').removeClass("is-invalid")
+    } else {
+        $('#emailLogin').addClass("is-invalid");
+        $('#emailLogin').removeClass("is-valid")
     }
     return false;
 }
@@ -38,16 +49,14 @@ const validateCpfRegex = (cpf) => {
 }
 
 const validateCpf = () => {
-    const $result = $('#resultadoCpf');
     const cpf = $('#cpf').val();
-    $result.text('');
 
     if (validateCpfRegex(cpf)) {
-        $result.text(cpf + ' is valid :)');
-        $result.css('color', 'green');
+        $('#cpf').addClass("is-valid");
+        $('#cpf').removeClass("is-invalid")
     } else {
-        $result.text(cpf + ' is not valid :(');
-        $result.css('color', 'red');
+        $('#cpf').addClass("is-invalid");
+        $('#cpf').removeClass("is-valid")
     }
     return false;
 }
@@ -59,16 +68,14 @@ const validateDateRegex = (date) => {
 }
 
 const validateDate = () => {
-    const $result = $('#resultadoData');
     const data = $('#dataNascimento').val();
-    $result.text('');
 
     if (validateDateRegex(data)) {
-        $result.text(data + ' is valid :)');
-        $result.css('color', 'green');
+        $('#dataNascimento').addClass("is-valid");
+        $('#dataNascimento').removeClass("is-invalid")
     } else {
-        $result.text(data + ' is not valid :(');
-        $result.css('color', 'red');
+        $('#dataNascimento').addClass("is-invalid");
+        $('#dataNascimento').removeClass("is-valid")
     }
     return false;
 }
@@ -80,16 +87,33 @@ const validateTelefoneRegex = (telefone) => {
 }
 
 const validateTelefone = () => {
-    const $result = $('#resultadoTelefone');
     const telefone = $('#telefone').val();
-    $result.text('');
 
     if (validateTelefoneRegex(telefone)) {
-        $result.text(telefone + ' is valid :)');
-        $result.css('color', 'green');
+        $('#telefone').addClass("is-valid");
+        $('#telefone').removeClass("is-invalid")
     } else {
-        $result.text(telefone + ' is not valid :(');
-        $result.css('color', 'red');
+        $('#telefone').addClass("is-invalid");
+        $('#telefone').removeClass("is-valid")
+    }
+    return false;
+}
+
+const validateCepRegex = (cep) => {
+    return cep.match(
+        /^\d{5}\-\d{3}$/
+    );
+}
+
+const validateCep = () => {
+    const cep = $('#cep').val();
+
+    if (validateCepRegex(cep)) {
+        $('#cep').addClass("is-valid");
+        $('#cep').removeClass("is-invalid")
+    } else {
+        $('#cep').addClass("is-invalid");
+        $('#cep').removeClass("is-valid")
     }
     return false;
 }
@@ -98,3 +122,5 @@ $('#emailCadastro').on('input', validateEmail);
 $('#cpf').on('input', validateCpf);
 $('#dataNascimento').on('input', validateDate);
 $('#telefone').on('input', validateTelefone);
+$('#cep').on('input', validateCep);
+$('#emailLogin').on('input', validateEmailLogin);
