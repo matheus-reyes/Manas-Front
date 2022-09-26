@@ -5,6 +5,10 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+#not-found{
+  width:700px;
+}
+
 .botoes-principais{
   background-color: #F5B1BE;
   color: white;

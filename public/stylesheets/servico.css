@@ -7,6 +7,10 @@
     width:75px;
 }
 
+#not-found{
+    width:700px;
+}
+
 .text-body{
     font-family: 'Quicksand', sans-serif;
     font-size: 25px;

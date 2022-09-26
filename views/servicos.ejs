@@ -44,8 +44,8 @@
 
         <div class="row mt-5">
             <% if(servicosPorCategoria.length == 0){ %>
-                <div class="col-12 text-center">
-                    <p class="body-text-p">Não há nenhum serviço com essa categoria disponível! </p>
+                <div class="col-6 mx-auto my-auto">
+                    <img src="images/not-found.png" id="not-found" class="img-fluid">
                 </div>
             <% } else { %>
                 <% for(servicoPorCategoria of servicosPorCategoria) { %>
