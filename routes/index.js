@@ -23,4 +23,8 @@ router.post('/cadastro', cadastroController.cadastro);
 
 router.post('/servico', prestadorController.cadastrarServico);
 
+router.post('/excluirServico', prestadorController.excluirServico);
+
+router.post('/editarServico', prestadorController.editarServico);
+
 module.exports = router;

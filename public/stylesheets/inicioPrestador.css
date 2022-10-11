@@ -5,6 +5,15 @@
     width:75px;
 }
 
+#botaoExcluir{
+    border:none;
+    background-color:white;
+}
+
+#botaoExcluir:hover{
+    cursor: pointer;
+}
+
 #not-found{
     width:700px;
 }

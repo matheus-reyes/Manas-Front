@@ -55,4 +55,63 @@ module.exports = {
         res.render("inicioPrestador", {feedback, servicos});
     },
 
+    //função para excluir o serviço
+    excluirServico: async (req, res) => {
+        const idServico = req.body.idServicoExcluir;
+
+        const url = "https://manas-back.herokuapp.com/service-provider/service/remove?id-service="+idServico;
+
+        const axiosConfig = {
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+            }
+        };
+
+        const response = await axios.delete(url, axiosConfig);
+        const feedback = "Serviço Excluido com Sucesso!";
+
+        const urlServicos = "https://manas-back.herokuapp.com/service-provider?id-service-provider="+req.session.usuario.idPerson;
+
+        const responseServicos = await axios.get(urlServicos, axiosConfig);
+        const servicos = responseServicos['data']['services'];
+
+        res.render("inicioPrestador", {feedback, servicos});
+    },
+
+    //função para editar o serviço
+    editarServico: async (req, res) => {
+        const nome = req.body.nomeServicoEditar;
+        const categoria = req.body.categoriaEditar;
+        const valorMedio = req.body.valorMedioEditar;
+        const descricao = req.body.descricaoEditar;
+        const idServico = req.body.idServicoEditar;
+
+        const body = JSON.stringify({
+            'idServiceProviderHasService': idServico,
+            'serviceName': nome,
+            'serviceCategory': categoria,
+            'description': descricao,
+            'price': valorMedio,
+        });
+
+        const url = "https://manas-back.herokuapp.com/service-provider/service/update";
+
+        const axiosConfig = {
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                "Access-Control-Allow-Origin": "*",
+            }
+        };
+
+        const response = await axios.put(url, body, axiosConfig);
+        const feedback = "Serviço Editado com Sucesso!";
+
+        const urlServicos = "https://manas-back.herokuapp.com/service-provider?id-service-provider="+req.session.usuario.idPerson;
+
+        const responseServicos = await axios.get(urlServicos, axiosConfig);
+        const servicos = responseServicos['data']['services'];
+
+        res.render("inicioPrestador", {feedback, servicos});
+    },
+
 }
