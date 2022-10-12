@@ -17,6 +17,8 @@ router.get('/servicos', auth, clienteController.servicos);
 
 router.get('/servicosContratados', auth, clienteController.servicosContratados);
 
+router.post('/contratarServico', auth, clienteController.contratarServico);
+
 router.post('/login', loginController.login);
 
 router.post('/cadastro', cadastroController.cadastro);

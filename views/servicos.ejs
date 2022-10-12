@@ -97,7 +97,8 @@
                           <div class="form-group col-6">
                             <label for="categoria"> <strong> Contato </strong></label>
                             <p> <%= servicoPorCategoria.telephone %> </p>
-                          </div>
+                            <button type="button" class="btn botao-servicos mt-5" data-toggle="modal" data-target="#modalAvaliacoes<%=servicoPorCategoria.idServiceProviderHasService%>"> Ver Avaliações</button> 
+                          </div>  
                         </div>  
                         <div class="form-group col-12 p-0">
                           <label for="nome"> <strong> Valor médio </strong></label>
@@ -111,7 +112,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn botao-modal-vermelho" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn botao-modal-verde" data-toggle="modal" data-target="#modalAvaliacoes<%=servicoPorCategoria.idServiceProviderHasService%>"> Ver Avaliações</button>
+                    <form action="/contratarServico" method="post">
+                        <input type="hidden" name="idServicoContratar" value="<%=servicoPorCategoria.idServiceProviderHasService%>">
+                        <button type="submit" class="btn botao-modal-verde">Contratar</button>
+                    </form>
                 </div>
             </div>
             </div>
