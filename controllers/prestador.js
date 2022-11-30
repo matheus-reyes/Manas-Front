@@ -114,4 +114,25 @@ module.exports = {
         res.render("inicioPrestador", {feedback, servicos});
     },
 
+    exibirContratantes: async (req, res) => {
+        const serviceId = req.query.serviceId;
+        const idPerson = req.session.usuario.idPerson;
+        const name = (req.session.usuario.namePerson).split(" ")[0];
+
+        const url = "https://manas-back.herokuapp.com/service-provider/service/customer/list?id-service="+serviceId;
+
+        const axiosConfig = {
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+            }
+        };
+
+        const response = await axios.get(url, axiosConfig);
+
+        const contratantes = response['data'];
+
+        console.log(contratantes)
+
+        res.render("contratantes", {contratantes, idPerson, name});
+    }
 }

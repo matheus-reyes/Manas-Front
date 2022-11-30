@@ -34,6 +34,8 @@ module.exports = {
     servicosContratados: async (req, res) => {
         const feedback = ""
         const url = "https://manas-back.herokuapp.com/customer/contracted-service?id-customer="+req.session.usuario.idPerson;
+        const idPerson = req.session.usuario.idPerson;
+        const name = (req.session.usuario.namePerson).split(" ")[0];
 
         const axiosConfig = {
             headers: {
@@ -49,12 +51,14 @@ module.exports = {
             servicosList.push(response['data'])
         }
         console.log(servicosList)
-        res.render('servicosContratados', {feedback, servicos:servicosList});
+        res.render('servicosContratados', {feedback, servicos:servicosList, idPerson, name});
     },
 
     contratarServico: async (req, res) => {
         const idServico = req.body.idServicoContratar;
         const idCustomer = req.session.usuario.idPerson;
+        const idPerson = req.session.usuario.idPerson;
+        const name = (req.session.usuario.namePerson).split(" ")[0];
 
         const body = JSON.stringify({
             'serviceId': idServico,
@@ -89,6 +93,6 @@ module.exports = {
             servicosList.push(response['data'])
         }
 
-        res.render("servicosContratados", {feedback, servicos: servicosList});
+        res.render("servicosContratados", {feedback, servicos: servicosList, idPerson, name});
     }
 }

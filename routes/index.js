@@ -29,4 +29,6 @@ router.post('/excluirServico', prestadorController.excluirServico);
 
 router.post('/editarServico', prestadorController.editarServico);
 
+router.get('/contratantes', prestadorController.exibirContratantes);
+
 module.exports = router;
