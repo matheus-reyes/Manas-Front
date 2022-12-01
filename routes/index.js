@@ -31,4 +31,6 @@ router.post('/editarServico', prestadorController.editarServico);
 
 router.get('/contratantes', prestadorController.exibirContratantes);
 
+router.post('/avaliar', clienteController.avaliarServico);
+
 module.exports = router;
